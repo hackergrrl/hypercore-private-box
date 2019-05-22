@@ -51,6 +51,10 @@ With [npm](https://npmjs.org/) installed, run
 $ npm install hypercore-private-box
 ```
 
+## Thanks
+
+Appreciation goes out to punkmonk (`@EaYYQo5nAQRabB9nxAn5i2uiIZ665b90Qk2U/WHNVE8=.ed25519`) for helping me figure out how sodium works!
+
 ## License
 
 ISC
