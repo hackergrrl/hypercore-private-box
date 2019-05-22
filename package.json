@@ -2,7 +2,7 @@
   "name": "hypercore-private-box",
   "description": "Encrypt messages that only a set of hypercores can decrypt",
   "author": "noffle <sww@eight.net>",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repository": {
     "url": "git://github.com/noffle/hypercore-private-box.git"
   },
