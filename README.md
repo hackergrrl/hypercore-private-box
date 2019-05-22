@@ -1,6 +1,6 @@
 # hypercore-private-box
 
-> Encrypt messages that only a set of hypercores can decrypt.
+> Encrypt messages that only members of a set of hypercores can decrypt.
 
 Wraps [private-box](https://github.com/auditdrivencrypto/private-box) to support hypercore (ed25519) keys.
 
