@@ -9,9 +9,10 @@ module.exports = {
 // Data buffer, array of hypercore public key buffers
 // Returns ciphertext buffer
 function box (data, recipients) {
-  recipients = recipients.map(function (key) {
+  if (!Array.isArray(recipients)) recipients = [recipients]
+  recipients = recipients.map(function (core) {
     var pkbuf = Buffer.alloc(sodium.crypto_box_PUBLICKEYBYTES)
-    sodium.crypto_sign_ed25519_pk_to_curve25519(pkbuf, key)
+    sodium.crypto_sign_ed25519_pk_to_curve25519(pkbuf, core.key)
     return pkbuf
   })
   return pb.encrypt(data, recipients)
@@ -19,9 +20,9 @@ function box (data, recipients) {
 
 // Encrypted data buffer, hypercore secret key
 // Returns decrypted buffer, or undefined if not addressed to the key
-function unbox (cdata, skey) {
+function unbox (cdata, core) {
   var skbuf = Buffer.alloc(sodium.crypto_box_SECRETKEYBYTES)
-  sodium.crypto_sign_ed25519_sk_to_curve25519(skbuf, skey)
+  sodium.crypto_sign_ed25519_sk_to_curve25519(skbuf, core.secretKey)
   return pb.decrypt(cdata, skbuf)
 }
 
