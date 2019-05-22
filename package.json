@@ -1,6 +1,6 @@
 {
   "name": "hypercore-private-box",
-  "description": "Encrypt messages that only a set of hypercores can decrypt",
+  "description": "Encrypt messages that only members of a set of hypercores can decrypt",
   "author": "noffle <sww@eight.net>",
   "version": "1.0.0",
   "repository": {
